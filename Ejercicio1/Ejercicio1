@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://colorlib.com/" />
+<title>Ejercicio1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Ejercicio1</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>https://colorlib.com/polygon/gentelella/index.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>https://colorlib.com/polygon/gentelella/index.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Forms</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertFormMenu</td>
+	<td>css=ul.side-menu &gt; li.active &gt; ul.child_menu</td>
+	<td>General Form|Advanced Components|Form Validation|Form Wizard|Form Upload|Form Buttons</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Form Validation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//span[text()='Personal Info']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Evariste Guadagna</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>guadagna@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email2</td>
+	<td>guadagna@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=website</td>
+	<td>http://basic.mindteq.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=occupation</td>
+	<td>corredor</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password2</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=telephone</td>
+	<td>092677336</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=textarea</td>
+	<td>058</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=send</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAttribute</td>
+	<td>css=input#name@placeholder</td>
+	<td>both name(s) e.g Jon Doe</td>
+</tr>
+<tr>
+	<td>assertAttribute</td>
+	<td>css=input#website@placeholder</td>
+	<td>www.website.com</td>
+</tr>
+</tbody></table>
+</body>
+</html>
