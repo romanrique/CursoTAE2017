@@ -78,6 +78,9 @@ Selenium.prototype.doGetDataFromTable = function(locator) {
     storedVars[args[1]] = JSON.stringify(ret);
 }
 
+Selenium.prototype.doWaitForPollo = function(condition, timeout) {
+	return this.doWaitForCondition(condition,timeout);
+}
 
 Selenium.prototype.doFillFormData = function(locator) {
     args = locator.split("|");
@@ -94,35 +97,34 @@ Selenium.prototype.doFillFormData = function(locator) {
     var captcha = this.browserbot.findElement('css=span#captchaOperation');
     var result = this.browserbot.findElement('name=captcha');
     var agree = this.browserbot.findElement('name=agree');
+    var submit = this.browserbot.findElement('css=button');
 
     var values = captcha.textContent.split("+");
     var sum = parseInt(values[0], 10) + parseInt(values[1], 10);
-    var delayMillis = 2000; //1 second
+    
+
+    
 
     for (var i = data.length - 1; i >= 0; i--) {
-        (function(i) {
-            setTimeout(function() {
+    	// return this.doWaitForCondition("2==2",5000);
+    	 // this.doWaitForPollo("2==3",5000);
+    	 //this.doWaitForPageToLoad(15000);
+    	
+
                 fname.value = data[i]['First Name'];
                 lname.value = data[i]['Last Name'];
-                username.value = data[i]['Username'];
+                username.value = data[i]['Username'] + "pepe";
                 email.value = data[i]['Email Address'];
                 pwd.value = data[i]['Password'];
-
-                if (data[i]['Gender'] == "Male") {
-                	var checkbox = this.browserbot.findElement('xpath=(//input[@name='gender'])[1]');
-                } else if (data[i]['Gender'] == "Female") {
-                	var checkbox = this.browserbot.findElement('xpath=(//input[@name='gender'])[2]');
-                } else {
-                	var checkbox = this.browserbot.findElement('xpath=(//input[@name='gender'])[3]');
-                }
-
+                var checkbox = this.browserbot.findElement('css=input[name=gender][value='+data[i]['Gender'].toLowerCase()+']');
                 checkbox.checked = true;
 
                 result.value = sum;
                 agree.checked = true;
 
-            }, 3000 * i);
-        }(i));
+                submit.click();
+
+          
     }
 }
 

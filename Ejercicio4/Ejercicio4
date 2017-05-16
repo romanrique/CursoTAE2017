@@ -31,6 +31,16 @@
 	<td>http://bylancer.com/product/spider/demo/semantic/horizontalForm.html?firstName=asd&amp;lastName=asd&amp;username=asdasd&amp;email=asd%40gmail.com&amp;password=asdasdasd&amp;gender=other&amp;captcha=199&amp;agree=on</td>
 	<td></td>
 </tr>
+<tr>
+	<td>fillFormData</td>
+	<td>css=form#horizontalForm|${myVar}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>javascript{delete storedVars.myVar}</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
