@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://colorlib.com/" />
 <title>Ejercicio4</title>
-</head>
+<style type="text/css">.comment {color: #AA33AA; height: 1em}</style></head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
@@ -22,9 +22,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>echo</td>
+	<td>storeEval</td>
 	<td>${myVar}</td>
+	<td>array</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{storedVars['array'][1].Password;}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['array'][0]</td>
+	<td>person1</td>
 </tr>
 <tr>
 	<td>open</td>
@@ -33,7 +43,7 @@
 </tr>
 <tr>
 	<td>fillFormData</td>
-	<td>css=form#horizontalForm|${myVar}</td>
+	<td>css=form#horizontalForm|${person1}</td>
 	<td></td>
 </tr>
 <tr>

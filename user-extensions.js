@@ -75,17 +75,20 @@ Selenium.prototype.doGetDataFromTable = function(locator) {
         }
     }
     
-    storedVars[args[1]] = JSON.stringify(ret);
+    storedVars[args[1]] = JSON.stringify(ret, null, 4);
 }
 
-Selenium.prototype.doWaitForPollo = function(condition, timeout) {
-	return this.doWaitForCondition(condition,timeout);
-}
+
 
 Selenium.prototype.doFillFormData = function(locator) {
     args = locator.split("|");
     var form = this.browserbot.findElement(args[0]);
-    var data = JSON.parse(args[1]);
+    alert("1- " +  args[1][0]);
+    var data = JSON.stringify(args[1]);
+    alert("1-2 " +  data);
+
+
+
 
     //
     var fname = this.browserbot.findElement('name=firstName');
@@ -102,14 +105,9 @@ Selenium.prototype.doFillFormData = function(locator) {
     var values = captcha.textContent.split("+");
     var sum = parseInt(values[0], 10) + parseInt(values[1], 10);
     
-
-    
-
+/*
     for (var i = data.length - 1; i >= 0; i--) {
-    	// return this.doWaitForCondition("2==2",5000);
-    	 // this.doWaitForPollo("2==3",5000);
-    	 //this.doWaitForPageToLoad(15000);
-    	
+         
 
                 fname.value = data[i]['First Name'];
                 lname.value = data[i]['Last Name'];
@@ -124,8 +122,7 @@ Selenium.prototype.doFillFormData = function(locator) {
 
                 submit.click();
 
-          
-    }
+//alert(JSON.stringify(data[i]));
+
+    }*/
 }
-
-
