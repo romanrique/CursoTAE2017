@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://colorlib.com/" />
+<title>Ejercicio2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Ejercicio2</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>https://colorlib.com/polygon/gentelella/form_validation.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#name@data-validate-length-range</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#name@data-validate-words</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#email@type</td>
+	<td>email</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#number@type</td>
+	<td>number</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#number@data-validate-minmax</td>
+	<td>10,100</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input#website@type</td>
+	<td>url</td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>css=input#occupation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>css=input#password</td>
+	<td></td>
+</tr>
+<!--Validate alert-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.alert@innerHTML</td>
+	<td>please put something here</td>
+</tr>
+<!--Validate password length-->
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=input@password@data-validate-length</td>
+	<td>6,8</td>
+</tr>
+<!--Check passwords match-->
+<tr>
+	<td>type</td>
+	<td>css=input#password</td>
+	<td>12345</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
