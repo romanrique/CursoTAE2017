@@ -83,14 +83,11 @@ Selenium.prototype.doGetDataFromTable = function(locator) {
 Selenium.prototype.doFillFormData = function(locator) {
     args = locator.split("|");
     var form = this.browserbot.findElement(args[0]);
-    alert("1- " +  args[1][0]);
-    var data = JSON.stringify(args[1]);
-    alert("1-2 " +  data);
+    
+
+    var num = args[1];
 
 
-
-
-    //
     var fname = this.browserbot.findElement('name=firstName');
     var lname = this.browserbot.findElement('name=lastName');
     var username = this.browserbot.findElement('name=username');
@@ -105,24 +102,21 @@ Selenium.prototype.doFillFormData = function(locator) {
     var values = captcha.textContent.split("+");
     var sum = parseInt(values[0], 10) + parseInt(values[1], 10);
     
-/*
-    for (var i = data.length - 1; i >= 0; i--) {
-         
 
-                fname.value = data[i]['First Name'];
-                lname.value = data[i]['Last Name'];
-                username.value = data[i]['Username'] + "pepe";
-                email.value = data[i]['Email Address'];
-                pwd.value = data[i]['Password'];
-                var checkbox = this.browserbot.findElement('css=input[name=gender][value='+data[i]['Gender'].toLowerCase()+']');
-                checkbox.checked = true;
+   
+    //Fill all fields
+    fname.value = storedVars['array'][num]['First Name'];
+    lname.value = storedVars['array'][num]['Last Name'];
+    username.value = storedVars['array'][num]['Username'];
+    email.value = storedVars['array'][num]['Email Address'];
+    pwd.value = storedVars['array'][num]['Password'];
+    var checkbox = this.browserbot.findElement('css=input[name=gender][value='+storedVars['array'][num]['Gender'].toLowerCase()+']');
+    checkbox.checked = true;
 
-                result.value = sum;
-                agree.checked = true;
+    result.value = sum;
+    agree.checked = true;
 
-                submit.click();
+    submit.click();
 
-//alert(JSON.stringify(data[i]));
 
-    }*/
 }

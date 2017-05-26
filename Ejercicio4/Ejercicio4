@@ -28,13 +28,23 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>javascript{storedVars['array'][1].Password;}</td>
+	<td>javascript{storedVars['array'][0];}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>storedVars['array'][0]</td>
-	<td>person1</td>
+	<td>storedVars['array'].length</td>
+	<td>amountOfPeople</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${amountOfPeople}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>open</td>
@@ -42,8 +52,33 @@
 	<td></td>
 </tr>
 <tr>
+	<td>while</td>
+	<td>${x}&lt;${amountOfPeople}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${x}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>fillFormData</td>
-	<td>css=form#horizontalForm|${person1}</td>
+	<td>css=form#horizontalForm|${x}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>eval(${x}+1)</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.ui.primary.button[disabled=&quot;&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
