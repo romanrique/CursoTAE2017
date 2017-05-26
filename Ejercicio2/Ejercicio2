@@ -46,26 +46,36 @@
 	<td>css=input#website@type</td>
 	<td>url</td>
 </tr>
+<!--Validate occupation alert-->
 <tr>
-	<td>focus</td>
+	<td>fireEvent</td>
 	<td>css=input#occupation</td>
-	<td></td>
+	<td>blur</td>
 </tr>
 <tr>
-	<td>focus</td>
-	<td>css=input#password</td>
-	<td></td>
+	<td>storeElementPresent</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[6]/div[2]</td>
+	<td>occupationAlertPresent</td>
 </tr>
-<!--Validate alert-->
+<tr>
+	<td>gotoIf</td>
+	<td>${occupationAlertPresent} == false</td>
+	<td>noAlertOnOccupation</td>
+</tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=div.alert@innerHTML</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[6]/div[2]</td>
 	<td>please put something here</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>noAlertOnOccupation</td>
+	<td></td>
 </tr>
 <!--Validate password length-->
 <tr>
 	<td>verifyAttribute</td>
-	<td>css=input@password@data-validate-length</td>
+	<td>css=input#password@data-validate-length</td>
 	<td>6,8</td>
 </tr>
 <!--Check passwords match-->
@@ -74,7 +84,103 @@
 	<td>css=input#password</td>
 	<td>12345</td>
 </tr>
-
+<tr>
+	<td>type</td>
+	<td>css=input#password2</td>
+	<td>1234567</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>css=input#password2</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[8]/div[2]</td>
+	<td>noMatchAlertPresent</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${noMatchAlertPresent} == false</td>
+	<td>noAlertOnPass</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[8]/div[2]</td>
+	<td>passwords do not match</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>noAlertOnPass</td>
+	<td></td>
+</tr>
+<!--Verify Telephone-->
+<tr>
+	<td>type</td>
+	<td>css=input#telephone</td>
+	<td>noPhone</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>css=input#telephone</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[9]/div[2]</td>
+	<td>invalidInputPresent</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${invalidInputPresent} == false</td>
+	<td>validPhone</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[9]/div[2]</td>
+	<td>invalid input</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>validPhone</td>
+	<td></td>
+</tr>
+<!--Verify Email-->
+<tr>
+	<td>type</td>
+	<td>css=input#email</td>
+	<td>test@selenium.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input#email2</td>
+	<td>tesst@selenium.com</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>css=input#email2</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[3]/div[2]</td>
+	<td>noEmailMatch</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${noEmailMatch} == false</td>
+	<td>matchedEmails</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//html/body/div[1]/div/div[3]/div/div[3]/div/div/div[2]/form/div[3]/div[2]</td>
+	<td>emails do not match</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>matchedEmails</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
